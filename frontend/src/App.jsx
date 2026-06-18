@@ -5,32 +5,29 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 // User
-import Aspirasi from "./pages/user/aspirasi";
-import Pengaduan from "./pages/user/pengaduan";
-import Permohonan from "./pages/user/permohonan";
+import Aspirasi from "./pages/user/Aspirasi";
+import Pengaduan from "./pages/user/Pengaduan";
+import Permohonan from "./pages/user/Permohonan";
 
 // Admin
-import Dashboard from "./pages/admin/dashboard";
-import AdminAspirasi from "./pages/admin/aspirasi";
-import AdminPermohonan from "./pages/admin/permohonan";
-import Kelurahan from "./pages/admin/kelurahan";
-import Masyarakat from "./pages/admin/masyarakat";
-import Petugas from "./pages/admin/petugas";
+import Dashboard from "./pages/admin/Dashboard";
+import AdminAspirasi from "./pages/admin/Aspirasi";
+import AdminPermohonan from "./pages/admin/Permohonan";
+import Kelurahan from "./pages/admin/Kelurahan";
+import Masyarakat from "./pages/admin/Masyarakat";
+import Petugas from "./pages/admin/Petugas";
 
 function App() {
   return (
     <Routes>
-      {/* Public */}
       <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* User */}
       <Route path="/user/aspirasi" element={<Aspirasi />} />
       <Route path="/user/pengaduan" element={<Pengaduan />} />
       <Route path="/user/permohonan" element={<Permohonan />} />
 
-      {/* Admin */}
       <Route path="/admin/dashboard" element={<Dashboard />} />
       <Route path="/admin/aspirasi" element={<AdminAspirasi />} />
       <Route path="/admin/permohonan" element={<AdminPermohonan />} />
