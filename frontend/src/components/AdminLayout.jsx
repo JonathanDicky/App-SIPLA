@@ -7,7 +7,7 @@ const ALL_NAV = [
   { path: '/admin/dashboard',  label: 'Dashboard',       icon: '📊', roles: ['admin','petugas'] },
   { path: '/admin/aspirasi',   label: 'Aspirasi',         icon: '📢', roles: ['admin','petugas'] },
   { path: '/admin/permohonan', label: 'Permohonan',       icon: '📄', roles: ['admin','petugas'] },
-  { path: '/admin/masyarakat', label: 'Data Masyarakat',  icon: '👥', roles: ['admin'] },
+  { path: '/admin/masyarakat', label: 'Data Masyarakat',  icon: '👥', roles: ['admin','petugas'] },
   { path: '/admin/petugas',    label: 'Data Petugas',     icon: '🛡️', roles: ['admin'] },          // admin only
   { path: '/admin/kelurahan',  label: 'Info Kelurahan',   icon: '🏛️', roles: ['admin','petugas'] },
 ]
@@ -85,7 +85,7 @@ export default function AdminLayout({ children }) {
           </div>
           <button onClick={() => { logout(); navigate('/login') }}
             className="w-full text-left text-sm text-red-300 hover:text-red-200 px-3 py-2 rounded-xl hover:bg-white/10 transition">
-            Keluar
+            🚪 Keluar
           </button>
         </div>
       </aside>

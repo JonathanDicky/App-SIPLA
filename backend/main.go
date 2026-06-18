@@ -25,6 +25,11 @@ func main() {
 		AllowCredentials: false, // Jika semua port pakai yang ini
 	}))
 	r.Static("/assets", "./assets")
+	r.GET("/", func(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"message": "API Pengaduan Masyarakat aktif 🚀",
+	})
+})
 	routes.SetupRoutes(r)
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -32,4 +37,5 @@ func main() {
 	}
 	log.Printf("Server berjalan di port %s", port)
 	r.Run(":" + port)
+	
 }
