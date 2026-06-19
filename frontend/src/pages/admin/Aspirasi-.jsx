@@ -353,7 +353,7 @@ export default function AdminAspirasi() {
                 {selected.latitude && <p className="text-gray-400 text-xs">🗺️ {selected.latitude}, {selected.longitude}</p>}
               </div>
               {selected.foto && (
-                <img src={`http://localhost:8080/${selected.foto}`} alt="foto"
+                <img src={`${API_URL}//${selected.foto}`} alt="foto"
                   className="rounded-xl max-h-48 object-cover w-full" />
               )}
               {selected.tanggapan?.length > 0 && (
