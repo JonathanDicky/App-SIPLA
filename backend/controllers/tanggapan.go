@@ -7,9 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/gin-gonic/gin"
 	"pengaduan/config"
 	"pengaduan/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 func saveBuktiFile(c *gin.Context, fieldName string) string {
@@ -17,7 +18,7 @@ func saveBuktiFile(c *gin.Context, fieldName string) string {
 	if err != nil {
 		return ""
 	}
-	ext      := filepath.Ext(file.Filename)
+	ext := filepath.Ext(file.Filename)
 	filename := fmt.Sprintf("assets/bukti/%d_%s%s", time.Now().UnixNano(), fieldName, ext)
 	if err := c.SaveUploadedFile(file, filename); err != nil {
 		return ""
@@ -36,8 +37,8 @@ func CreateTanggapan(c *gin.Context) {
 	}
 
 	idPengaduanStr := c.PostForm("id_pengaduan")
-	tanggapanTeks  := c.PostForm("tanggapan")
-	status         := c.PostForm("status")
+	tanggapanTeks := c.PostForm("tanggapan")
+	status := c.PostForm("status")
 
 	if idPengaduanStr == "" || tanggapanTeks == "" {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "id_pengaduan dan tanggapan wajib diisi"})

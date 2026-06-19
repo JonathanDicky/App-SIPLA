@@ -3,6 +3,7 @@ package controllers
 import (
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -75,7 +76,7 @@ func Login(c *gin.Context) {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Username atau password salah"})
 		return
 	}
-	token, err := generateToken(string(rune(petugas.IDPetugas)), petugas.Username, petugas.Roles)
+	token, err := generateToken(strconv.Itoa(int(petugas.IDPetugas)), petugas.Username, petugas.Roles)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Gagal membuat token"})
 		return
